@@ -1,30 +1,38 @@
 <template>
-  <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <main>
-      <AgeCheck />
-    </main>
-  </div>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Can I Drive?</title>
+    </head>
+    <body>
+      <main>
+        <AgeCheck />
+      </main>
+      <Footer id="footer" />
+    </body>
+  </html>
 </template>
 
 <script>
 import AgeCheck from "./components/AgeCheck";
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
   components: {
     AgeCheck,
+    Footer,
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 </style>
