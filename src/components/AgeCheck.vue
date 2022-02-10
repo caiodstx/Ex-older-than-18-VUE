@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex justify-content-center">
+  <v-container>
     <v-card elevation="24">
       <v-card-text>
         <form>
@@ -26,10 +26,11 @@
           </v-card-actions>
         </form>
       </v-card-text>
+      <v-alert id="drive-alert">{{ message }}</v-alert>
     </v-card>
-    <v-alert>{{ message }}</v-alert>
   </v-container>
 </template>
+
 
 <script>
 import { validationMixin } from "vuelidate";
@@ -73,7 +74,9 @@ export default {
       let age = this.age;
       if (age >= 18) {
         this.message = "You can drive!";
-      } else { this.message = "You can't drive :("; }
+      } else {
+        this.message = "You can't drive :(";
+      }
       this.$v.$touch();
     },
     clear() {
@@ -88,5 +91,10 @@ export default {
 <style lang="scss">
 #btns {
   font-family: poppins, sans-serif;
+}
+
+#dirve-alert {
+  display: flex;
+  justify-content: center;
 }
 </style>

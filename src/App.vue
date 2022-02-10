@@ -8,9 +8,7 @@
       <title>Can I Drive?</title>
     </head>
     <body>
-      <main>
-        <AgeCheck />
-      </main>
+      <AgeCheck />
       <Footer id="footer" />
     </body>
   </html>
