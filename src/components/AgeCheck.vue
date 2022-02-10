@@ -27,6 +27,7 @@
         </form>
       </v-card-text>
     </v-card>
+    <v-alert>{{ message }}</v-alert>
   </v-container>
 </template>
 
@@ -47,6 +48,7 @@ export default {
   data: () => ({
     name: "",
     age: "",
+    message: "",
   }),
 
   computed: {
@@ -61,7 +63,6 @@ export default {
     ageErrors() {
       const errors = [];
       if (!this.$v.age.$dirty) return errors;
-      !this.$v.age.age && errors.push("Must be valid age");
       !this.$v.age.required && errors.push("Age is required");
       return errors;
     },
@@ -69,6 +70,10 @@ export default {
 
   methods: {
     submit() {
+      let age = this.age;
+      if (age >= 18) {
+        this.message = "You can drive!";
+      } else { this.message = "You can't drive :("; }
       this.$v.$touch();
     },
     clear() {
